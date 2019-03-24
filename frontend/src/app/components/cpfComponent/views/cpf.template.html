@@ -1,0 +1,9 @@
+<grid-component tamanho-pc="vm.tamanhoPc" obrigatorio="vm.obrigatorio">
+    <label class="control-label" >{{vm.nome}}</label>
+
+    <input ng-if="vm.tipo == 'text'" id="{{vm.identificador}}" ng-disabled="vm.disabilitado" name="{{vm.identificador}}" type="{{vm.tipo}}" class="form-control"
+           maxlength="{{vm.tamanhoMaximo}}" minlength="{{vm.tamanhoMinimo}}" ng-model="vm.modelo[vm.identificador]"
+           ui-br-cpf-mask="vm.modelo[vm.identificador]" ng-required="vm.obrigatorio"
+    />
+    <mensagem-component identificador="{{vm.identificador}}"  formulario="vm.formulario"></mensagem-component>
+</grid-component>

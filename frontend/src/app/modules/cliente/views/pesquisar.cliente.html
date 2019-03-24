@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Filtro de Pesquisa</h1>
+    <div class="col-xs-4 text-right ng-scope">
+        <button  class="mb-sm btn btn-primary" ui-sref="cliente.cadastrar" type="button" title="Adicionar Cliente">Adicionar Cliente</button>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="col-xs-12" ng-if="vm.clientes.length > 0">
+        <table  datatable="ng" class="table table-striped table-bordered" width="100%" dt-options="datatable.options"  >
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th style="width: 20%;">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="cursor: pointer" ng-repeat="cliente in vm.clientes" >
+                <td title="{{cliente.nome}}">{{cliente.nome | truncate : 40}}</td>
+                <td title="{{cliente.cpf}}">{{ cliente.cpf | cpf}}</td>
+
+                <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button  type="button" class="btn btn-success" ui-sref="cliente.visualizar({id: cliente.id})"
+                                 data-toggle="tooltip" data-placement="top" title="Visualizar">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </button>
+                        <button  type="button" class="btn btn-primary" ui-sref="cliente.editar({id: cliente.id })" data-toggle="tooltip"
+                                 data-placement="top" title="Alterar">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </button>
+                        <button  type="button" class="btn btn-danger" ng-click="vm.excluir(cliente.id)" data-toggle="tooltip"
+                                 data-placement="top" title="Excluir">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

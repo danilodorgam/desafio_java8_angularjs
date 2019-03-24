@@ -1,0 +1,12 @@
+<grid-component tamanho-pc="vm.tamanhoPc" obrigatorio="vm.obrigatorio">
+    <label class="control-label" >{{vm.nome}}</label>
+
+    <select  class="form-control"
+             ng-disabled="vm.disabilitado" ng-required="vm.obrigatorio" id="{{vm.identificador}}" name="{{vm.identificador}}"
+             ng-model="vm.modelo[vm.identificador]"
+             ng-options="item[vm.value] as item[vm.descricao] for item in vm.listagem">
+        <option value>Selecione</option>
+    </select>
+
+    <mensagem-component identificador="{{vm.identificador}}"  formulario="vm.formulario"></mensagem-component>
+</grid-component>

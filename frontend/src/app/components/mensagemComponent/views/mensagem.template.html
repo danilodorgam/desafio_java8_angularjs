@@ -1,0 +1,9 @@
+<!--mensagens -->
+<ng-messages ng-if="vm.formulario[vm.identificador].$touched || vm.formulario.$submitted" for="vm.formulario[vm.identificador].$error">
+    <span ng-message="required" class="text-danger">campo  obrigatório</span>
+    <span ng-message="maxlength" class="text-danger">campo  está acima do limite</span>
+    <span ng-message="minlength" class="text-danger">campo  está abaixo do limite</span>
+    <span ng-message="cpf" class="text-danger">CPF invalido</span>
+    <span ng-message="cep" class="text-danger">CEP invalido</span>
+    <span ng-message="email" class="text-danger">E-mail invalido</span>
+</ng-messages>

@@ -1,0 +1,25 @@
+<form-component formulario="vm.telefoneForm" ng-init="vm.init()">
+    <select-component
+            nome="Tipo" identificador="tipoTelefone"
+            modelo="vm.telefone"
+            obrigatorio="true" formulario="vm.telefoneForm"
+            disabilitado="vm.disabilitar"
+            tamanho-pc="12" listagem="vm.listarTipoTelefone" descricao="descricao" value="codigo"
+    ></select-component>
+    <numero-telefone-component nome="Número" identificador="numero" tipo="text"
+                               tamanho-maximo="500" modelo="vm.telefone"
+                               obrigatorio="true" formulario="vm.telefoneForm"
+                               tamanho-pc="12"
+                               disabilitado="false">
+    </numero-telefone-component>
+
+
+    <grid-component tamanho-pc="12">
+        <div class="panel-footer text-right">
+            <button  type="button"  class="btn btn-primary" ng-click="vm.salvar(vm.telefoneForm,vm)" >
+                Adicionar Telefone
+            </button>
+        </div>
+    </grid-component>
+
+</form-component>

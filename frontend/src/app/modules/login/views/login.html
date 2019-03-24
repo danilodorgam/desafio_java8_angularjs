@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2" >Login</h1>
+</div>
+
+<grid-component tamanho-pc="12">
+    <form-component formulario="vm.loginForm" metodo-submit="vm.logar" contexto="vm">
+        <input-component nome="Usuario" identificador="user" tipo="text"
+                         tamanho-maximo="100" tamanho-minimo="3" modelo="vm.login"
+                         obrigatorio="true" formulario="vm.loginForm"
+                         tamanho-pc="12"
+                          >
+        </input-component>
+
+
+        <input-component nome="Senha" identificador="senha" tipo="password"
+                        modelo="vm.login"
+                         obrigatorio="true" formulario="vm.loginForm"
+                         tamanho-pc="12"
+                          >
+        </input-component>
+
+
+        <!--Botões Form-->
+        <grid-component tamanho-pc="12">
+            <div class="panel-footer text-right">
+                <button  type="submit"  class="btn btn-primary" ng-if="!vm.disabilitar" >
+                    Login
+                </button>
+            </div>
+        </grid-component>
+    </form-component>
+</grid-component>
