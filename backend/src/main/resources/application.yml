@@ -1,0 +1,35 @@
+info:
+  name: desafio
+
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
+    hibernate:
+      ddl-auto: @ddl.auto@
+  #Banco de Dados
+  datasource:
+    url: @url.db@
+    username: @user.db@
+    password: @password.db@
+    max-pool-size: @max.pool.db@
+    min-pool-size: @min.pool.db@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#Configurações de servidor
+server:
+  port: @server.port@
+  servlet:
+    context-path: @server.path@
+#Log e niveis
+logging:
+  file: @log.path@${info.name}.log
+  level:
+    org:
+      springframework: INFO
+      hibernate:
+        SQL: DEBUG
+        type.descriptor.sql.BasicBinder: TRACE
+
